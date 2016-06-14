@@ -97,6 +97,13 @@ $(document).ready(function() {
         }
     }
 
+    function checkWin(board, col, row){
+      horizontalCheck(board, row)
+      diagonalCheck(board, col, row)
+      invDiagonalCheck(board, col, row)
+      verticalCheck(board, col, row)
+    }
+
     $('#col1.space').click(function(e) {
         e.preventDefault();
         playerTurn += 1
@@ -104,18 +111,12 @@ $(document).ready(function() {
             $('#row' + col1Counter + ' #col1').addClass('black');
             col1Counter += 1
             board[(col1Counter - 2)][0] = "B"
-            horizontalCheck(board, (col1Counter - 2))
-            diagonalCheck(board, 0, (col1Counter - 2))
-            invDiagonalCheck(board, 0, (col1Counter - 2))
-            verticalCheck(board, 0, (col1Counter - 2))
+            checkWin(board, 0, (col1Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + col1Counter + ' #col1').addClass('red');
             col1Counter += 1
             board[(col1Counter - 2)][0] = "R"
-            horizontalCheck(board, (col1Counter - 2))
-            diagonalCheck(board, 0, (col1Counter - 2))
-            invDiagonalCheck(board, 0, (col1Counter - 2))
-            verticalCheck(board, 0, (col1Counter - 2))
+            checkWin(board, 0, (col1Counter - 2))
         }
     })
 
@@ -126,18 +127,12 @@ $(document).ready(function() {
             $('#row' + col2Counter + ' #col2').addClass('black');
             col2Counter += 1
             board[(col2Counter - 2)][1] = "B"
-            horizontalCheck(board, (col2Counter - 2))
-            diagonalCheck(board, 1, (col2Counter - 2))
-            invDiagonalCheck(board, 1, (col2Counter - 2))
-            verticalCheck(board, 1, (col2Counter - 2))
+            checkWin(board, 1, (col2Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + column2_counter + ' #col2').addClass('red');
             col2Counter += 1
             board[(col2Counter - 2)][1] = "R"
-            horizontalCheck(board, (col2Counter - 2))
-            diagonalCheck(board, 1, (col2Counter - 2))
-            invDiagonalCheck(board, 1, (col2Counter - 2))
-            verticalCheck(board, 1, (col2Counter - 2))
+            checkWin(board, 1, (col2Counter - 2))
         }
     })
 
@@ -148,18 +143,12 @@ $(document).ready(function() {
             $('#row' + col3Counter + ' #col3').addClass('black');
             col3Counter += 1
             board[(col3Counter - 2)][2] = "B"
-            horizontalCheck(board, (col3Counter - 2))
-            diagonalCheck(board, 2, (col3Counter - 2))
-            invDiagonalCheck(board, 2, (col3Counter - 2))
-            verticalCheck(board, 2, (col3Counter - 2))
+            checkWin(board, 2, (col3Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + col3Counter + ' #col3').addClass('red');
             col3Counter += 1
             board[(col3Counter - 2)][2] = "R"
-            horizontalCheck(board, (col3Counter - 2))
-            diagonalCheck(board, 2, (col3Counter - 2))
-            invDiagonalCheck(board, 2, (col3Counter - 2))
-            verticalCheck(board, 2, (col3Counter - 2))
+            checkWin(board, 2, (col3Counter - 2))
         }
     })
 
@@ -170,18 +159,12 @@ $(document).ready(function() {
             $('#row' + col4Counter + ' #col4').addClass('black');
             col4Counter += 1
             board[(col4Counter - 2)][3] = "B"
-            horizontalCheck(board, (col4Counter - 2))
-            diagonalCheck(board, 3, (col4Counter - 2))
-            invDiagonalCheck(board, 3, (col4Counter - 2))
-            verticalCheck(board, 3, (col4Counter - 2))
+            checkWin(board, 3, (col4Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + col4Counter + ' #col4').addClass('red');
             col4Counter += 1
             board[(col4Counter - 2)][3] = "R"
-            horizontalCheck(board, (col4Counter - 2))
-            diagonalCheck(board, 3, (col4Counter - 2))
-            invDiagonalCheck(board, 3, (col4Counter - 2))
-            verticalCheck(board, 3, (col4Counter - 2))
+            checkWin(board, 3, (col4Counter - 2))
         }
     })
 
@@ -192,18 +175,12 @@ $(document).ready(function() {
             $('#row' + col5Counter + ' #col5').addClass('black');
             col5Counter += 1
             board[(col5Counter - 2)][4] = "B"
-            horizontalCheck(board, (col5Counter - 2))
-            diagonalCheck(board, 4, (col5Counter - 2))
-            invDiagonalCheck(board, 4, (col5Counter - 2))
-            verticalCheck(board, 4, (col5Counter - 2))
+            checkWin(board, 4, (col5Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + col5Counter + ' #col5').addClass('red');
             col5Counter += 1
             board[(col5Counter - 2)][4] = "R"
-            horizontalCheck(board, (col5Counter - 2))
-            diagonalCheck(board, 4, (col5Counter - 2))
-            invDiagonalCheck(board, 4, (col5Counter - 2))
-            verticalCheck(board, 4, (col5Counter - 2))
+            checkWin(board, 4, (col5Counter - 2))
         }
     })
 
@@ -214,18 +191,12 @@ $(document).ready(function() {
             $('#row' + col6Counter + ' #col6').addClass('black');
             col6Counter += 1
             board[(col6Counter - 2)][5] = "B"
-            horizontalCheck(board, (col6Counter - 2))
-            linearCheck(board, 5, (col6Counter - 2))
-            inverseCheck(board, 5, (col6Counter - 2))
-            verticalCheck(board, 5, (col6Counter - 2))
+            checkWin(board, 5, (col6Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + col6Counter + ' #col6').addClass('red');
             col6Counter += 1
             board[(col6Counter - 2)][5] = "R"
-            horizontalCheck(board, (col6Counter - 2))
-            linearCheck(board, 5, (col6Counter - 2))
-            inverseCheck(board, 5, (col6Counter - 2))
-            verticalCheck(board, 5, (col6Counter - 2))
+            checkWin(board, 5, (col6Counter - 2))
         }
     })
 
@@ -236,18 +207,12 @@ $(document).ready(function() {
             $('#row' + col7Counter + ' #col7').addClass('black');
             col7Counter += 1
             board[(col7Counter - 2)][6] = "B"
-            horizontalCheck(board, (col7Counter - 2))
-            linearCheck(board, 6, (col7Counter - 2))
-            inverseCheck(board, 6, (col7Counter - 2))
-            verticalCheck(board, 6, (col7Counter - 2))
+            checkWin(board, 6, (col7Counter - 2))
         } else if (isOdd(playerTurn) == false) {
             $('#row' + col7Counter + ' #col7').addClass('red');
             col7Counter += 1
             board[(col7Counter - 2)][6] = "R"
-            horizontalCheck(board, (col7Counter - 2))
-            linearCheck(board, 6, (col7Counter - 2))
-            inverseCheck(board, 6, (col7Counter - 2))
-            verticalCheck(board, 6, (col7Counter - 2))
+            checkWin(board, 6, (col7Counter - 2))
         }
     })
 });
