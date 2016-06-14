@@ -1,0 +1,31 @@
+.board {
+  width: 50%;
+  text-align: center;
+  background-color: yellow;
+  position: relative;
+  margin: auto;
+}
+
+
+.cell {
+  background-color: white;
+  background-size: cover;
+  width: 1em;
+  height: 6em;
+  border-radius: 5em;
+  border: 1px solid yellow;
+}
+
+.red {
+  background-color: red;
+  background-size: cover;
+}
+
+.black {
+  background-color: black;
+  background-size: cover;
+}
+
+.hover{
+  background-color: gray;
+}
